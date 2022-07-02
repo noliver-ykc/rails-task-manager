@@ -1,5 +1,7 @@
 <h1>Index page</h1>
 
 <% @tasks.each do |task| %>
-  <p><%= link_to task.title, task_path(task) %></p>
+<p> <%= link_to task.title, task_path(task) %> <%= link_to "🗑", task_path(task.id), method: :delete, data: { confirm: "Are you sure?" } %></p>
 <% end %>
+
+<%= link_to "Add a new task", new_task_path %>
